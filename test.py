@@ -1,0 +1,10 @@
+import torch
+print(f"PyTorch 版本: {torch.__version__}")
+print(f"CUDA 是否可用: {torch.cuda.is_available()}")
+print(f"可用 GPU 数量: {torch.cuda.device_count()}")
+print(f"当前 GPU 名称: {torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'None'}")
+print(f"PyTorch 使用的 CUDA 版本: {torch.version.cuda}")
+print(f"cuDNN 版本: {torch.backends.cudnn.version()}")
+print(f"GPU 显存: {torch.cuda.get_device_properties(0).total_memory / 1024 ** 3} GB")
+print(f"CPU 核心数: {torch.get_num_threads()}")
+print(f"PyTorch 运行模式: {torch.cuda.get_device_properties(0).name if torch.cuda.is_available() else 'CPU'}")
